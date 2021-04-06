@@ -1,0 +1,28 @@
+.google-sign-in:hover {
+  text-decoration: none;
+}
+.main-div {
+  background-color: white;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+.right-align {
+  text-align: right;
+}
+.main-color {
+  color: #ff5678;
+}
+.margin-top-bottom-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.margin-top-40-bottom-50 {
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+.color-gray {
+  color: gray;
+}
+.border-color-gray {
+  border-color: gray;
+}

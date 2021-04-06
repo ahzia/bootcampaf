@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bootcamp</title>
+    <script type="text/javascript" src="bootstrap/Jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <style media="screen">
+      .nav-item{
+        padding-bottom:8px;
+        padding-top:8px;
+      }
+      .nav-link{
+        color:#ff5678 !important;
+      }
+      .active{
+        border-bottom: 2px solid #007bff;
+      }
+      .course-div-title{
+        color:#ff5678 !important;
+        margin-top:30px;
+        margin-bottom:20px;
+        box-shadow: 0 2px 3px -2px gray;
+        padding-top:10px;
+        padding-bottom:10px;
+      }
+      .course-div-title-text{
+        padding-top:10px;
+        padding-bottom:10px;
+        border-bottom: 2px solid #007bff;
+      }
+      .course-div-content{
+        border:1px solid lightgray;
+        padding:20px;
+        <!-- margin:10px; -->
+      }
+      .course-div-content:hover{
+        cursor:pointer;
+        box-shadow:2px 2px 5px 1px gray;
+      }
+      .modal-header{
+        background:#ff5678 !important;
+        color:white;
+      }
+      <!-- lksdjf -->
+      .main-color{
+        color:#ff5678;
+      }
+      .color-lightgray{
+        color:lightgray;
+      }
+      .border-color-gray{
+        border-color:gray;
+      }
+      .no-padding-top-bottom{
+        padding-top:0px;
+        padding-bottom:0px;
+
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <div class="container-fluid" style="box-shadow: 0 2px 3px -2px gray">
+      <div class="row">
+        <div class="container">
+          <nav
+            class="navbar navbar-expand-sm navbar-light no-padding-top-bottom"
+          >
+            <a class="navbar-brand" href="#" style="color: #ff5678"
+              ><b>BootCamp</b></a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"
+                    >Dashborad <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Logout</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link"
+                    ><img
+                      src="Assets/username.png"
+                      width="20"
+                      height="20"
+                      alt=""
+                    />
+                    Mursal Ahmadi</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="course-div-title">
+            <span class="course-div-title-text">Enrolled Course</span>
+          </div>
+        </div>
+        <div class="col-md-3 course-div-content">
+          <h6>How to increase productivity at work</h6>
+          <p style="color: lightgray">Created by Ahmad</p>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="Assets/film.png" alt="" />
+              <span style="font-size: 10px">Topic: 40</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/clock.png" alt="" />
+              <span style="font-size: 10px">Hours: 4</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/diamond.png" alt="" />
+              <span style="font-size: 10px">Topic: 4</span>
+            </div>
+            <div class="col-md-6" style="text-align: left; margin-top: 10px">
+              <img src="Assets/Group 630.png" alt="" />
+            </div>
+            <div class="col-md-6" style="text-align: right; margin-top: 40px">
+              <img src="Assets/arrow.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 course-div-content">
+          <h6>Graphic Design</h6>
+          <p style="color: lightgray">Created by Mahmood</p>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="Assets/film.png" alt="" />
+              <span style="font-size: 10px">Topic: 40</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/clock.png" alt="" />
+              <span style="font-size: 10px">Hours: 4</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/diamond.png" alt="" />
+              <span style="font-size: 10px">Topic: 4</span>
+            </div>
+            <div class="col-md-6" style="text-align: left; margin-top: 10px">
+              <img src="Assets/Group 630.png" alt="" />
+            </div>
+            <div class="col-md-6" style="text-align: right; margin-top: 40px">
+              <img src="Assets/arrow.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 course-div-content">
+          <h6>Accounting Basics</h6>
+          <p style="color: lightgray">Created by Hamid</p>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="Assets/film.png" alt="" />
+              <span style="font-size: 11px">Topic: 40</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/clock.png" alt="" />
+              <span style="font-size: 10px">Hours: 4</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/diamond.png" alt="" />
+              <span style="font-size: 10px">Topic: 4</span>
+            </div>
+            <div class="col-md-6" style="text-align: left; margin-top: 10px">
+              <img src="Assets/Group 630.png" alt="" />
+            </div>
+            <div class="col-md-6" style="text-align: right; margin-top: 40px">
+              <img src="Assets/arrow.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <img src="Assets/Calendar.png" width="300" alt="" />
+        </div>
+        <div class="col-md-12">
+          <button
+            type="button"
+            class="btn btn-sm btn-light border-color-gray"
+            style="margin-top: 10px"
+            name="button"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
+            Join new Course
+          </button>
+          <button type="button"
+          class="btn btn-sm btn-light border-color-gray"
+          style="margin-top: 10px"
+          name="button" id="create_course_button" >
+            Create Course
+          </button>
+      
+          <pre id="content" style="white-space: pre-wrap"></pre>
+        </div>
+        <!-- join course modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Join New Course
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true" style="color: white">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"
+                      >Course Name</span
+                    >
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm"
+                  />
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"
+                      >Course Name</span
+                    >
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm"
+                  />
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"
+                      >Course Name</span
+                    >
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm"
+                  />
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm"
+                      >Course Name</span
+                    >
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm"
+                  />
+                </div>
+                <center>
+                  <button
+                    type="button"
+                    class="btn btn-md"
+                    style="background-color: #ff5678; color: white"
+                  >
+                    Seach
+                  </button>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /join course modal -->
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="course-div-title">
+            <span class="course-div-title-text">Created Courses</span>
+          </div>
+        </div>
+        <div class="col-md-3 course-div-content">
+          <center><img src="Assets/4393.png" alt="" /></center>
+          <h6>How to increase productivity at work</h6>
+          <p style="color: lightgray">Created by Ahmad</p>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="Assets/film.png" alt="" />
+              <span style="font-size: 11px">Topic: 40</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/clock.png" alt="" />
+              <span style="font-size: 10px">Hours: 4</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/diamond.png" alt="" />
+              <span style="font-size: 10px">Topic: 4</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 course-div-content">
+          <center><img src="Assets/6461.png" alt="" /></center>
+          <h6>Graphic Design</h6>
+          <p style="color: lightgray">Created by Mahmood</p>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="Assets/film.png" alt="" />
+              <span style="font-size: 11px">Topic: 40</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/clock.png" alt="" />
+              <span style="font-size: 10px">Hours: 4</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/diamond.png" alt="" />
+              <span style="font-size: 10px">Topic: 4</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 course-div-content">
+          <center><img src="Assets/4393.png" alt="" /></center>
+          <h6>Accounting Basics</h6>
+          <p style="color: lightgray">Created by Hamid</p>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="Assets/film.png" alt="" />
+              <span style="font-size: 11px">Topic: 40</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/clock.png" alt="" />
+              <span style="font-size: 10px">Hours: 4</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/diamond.png" alt="" />
+              <span style="font-size: 10px">Topic: 4</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 course-div-content">
+          <center><img src="Assets/6461.png" alt="" /></center>
+          <h6>Graphic Design</h6>
+          <p style="color: lightgray">Created by Mahmood</p>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="Assets/film.png" alt="" />
+              <span style="font-size: 11px">Topic: 40</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/clock.png" alt="" />
+              <span style="font-size: 10px">Hours: 4</span>
+            </div>
+            <div class="col-md-4">
+              <img src="Assets/diamond.png" alt="" />
+              <span style="font-size: 10px">Topic: 4</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12" style="margin-bottom: 50px; margin-top: 10px">
+          <button
+            type="button"
+            class="btn btn-sm btn-light"
+            name="button"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            style="border-color: gray"
+          >
+            Create new Course
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      
+      //this variable will store the channel id of loged in user
+      var channelID;
+
+      var createCourseButton = document.getElementById("create_course_button");
+      createCourseButton.onclick = CreateCourse;
+      /**
+       * Append a pre element to the body containing the given message
+       * as its text node. Used to display the results of the API call.
+       *
+       * @param {string} message Text to be placed in pre element.
+       */
+      function appendPre(message) {
+        var pre = document.getElementById("content");
+        var textContent = document.createTextNode(message + "\n");
+        pre.appendChild(textContent);
+      }
+
+      /**
+       * Print the names of the first 10 courses the user has access to. If
+       * no courses are found an appropriate message is printed.
+       */
+      function listCourses() {
+        gapi.client.classroom.courses
+          .list({
+            pageSize: 10,
+          })
+          .then(function (response) {
+            var courses = response.result.courses;
+            console.log("Response", response);
+            appendPre("Courses:");
+
+            if (courses.length > 0) {
+              for (i = 0; i < courses.length; i++) {
+                var course = courses[i];
+                appendPre(course.name);
+              }
+            } else {
+              appendPre("No courses found.");
+            }
+          });
+      }
+      //Function to create a cource in google classroom
+      function CreateCourse() {
+        return gapi.client.classroom.courses
+          .create({
+            resource: {
+              name: "Temp234",
+              descriptionHeading: "Welcome to my Course",
+              description: "Temp description",
+              ownerId: "me",
+            },
+          })
+          .then(
+            function (response) {
+              // Handle the results here (response.result has the parsed body).
+              console.log("Response", response);
+              listCourses();
+            },
+            function (err) {
+              console.error("Execute error", err);
+            }
+          );
+      }
+      //Function to return the channel ID of current User
+      function channelsId() {
+        return gapi.client.youtube.channels
+          .list({
+            part: ["id"],
+            mine: true,
+          })
+          .then(
+            function (response) {
+              // Handle the results here (response.result has the parsed body).
+              //console.log("Response", response);
+              //change the response to js object and extract channel id from it
+              channelID = JSON.parse(response.body).items[0].id;
+              console.log("Channel id", channelID);
+            },
+            function (err) {
+              console.error("Execute error", err);
+            }
+          );
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};listCourses()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()"
+    ></script>
+  </body>
+</html>

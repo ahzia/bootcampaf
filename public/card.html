@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="course-div-title">
+            <span class="course-div-title-text">Enrolled Course</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 course-div-content card">
+            <!-- put item.userId & item.id below this -->
+            <h5 class="card-header"></h5>
+            <p style="color: lightgray">Created by Ahmad</p>
+            <div class="card-body">
+              <!-- put item.title below this -->
+              <h5 class="card-title"></h5>
+              <!-- put item.body below this -->
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+        function execute() {
+    return gapi.client.classroom.courses.list({
+      "studentId": "me"
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  }
+  
+     
+    </script>
+    <script
+    async
+    defer
+    src="https://apis.google.com/js/api.js"
+    onload="this.onload=function(){};"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()"
+  ></script>
+  </body>
+</html>

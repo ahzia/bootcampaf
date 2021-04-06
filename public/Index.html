@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+  </head>
+  <body style="background-color: #ff5678">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 main-div">
+          <div class="container">
+            <div class="col-md-12 right-align" style="margin-top: 10px">
+              <h2 style="cursor: pointer">
+                <span aria-hidden="true" >&times;</span>
+              </h2>
+            </div>
+            <div class="col-md-12 text-center main-color">
+              <h2>BootCamp</h2>
+            </div>
+            <div class="col-md-12 text-center margin-top-bottom-10 color-gray">
+              <h6>Welcome Back!</h6>
+            </div>
+            <div class="col-md-12 margin-top-40-bottom-50">
+              <button
+                type="button"
+                class="btn btn-block btn-light border-color-gray"
+                name="button"
+                id="authorize_button"
+                style="display: none"
+              >
+                <img
+                  src="Assets/Group 90.png"
+                  width="15"
+                  height="15"
+                  alt=""
+                />&nbsp <b>Sign In with Google</b>
+              </button>
+              <button
+                type="button"
+                class="btn btn-block btn-light border-color-gray"
+                name="button"
+                id="signout_button"
+                style="display: none"
+              >
+                <img
+                  src="Assets/Group 90.png"
+                  width="15"
+                  height="15"
+                  alt=""
+                />&nbsp <b>Signout</b>
+              </button>
+              <button
+                type="button"
+                class="btn btn-block btn-light border-color-gray"
+                name="button"
+                id="dashborad"
+                style="display: none"
+              >
+                <img
+                  src="Assets/Group 90.png"
+                  width="15"
+                  height="15"
+                  alt=""
+                />&nbsp <b>Go to Dashborad</b>
+              </button>
+            </div>
+            <h6 class="col-md-12 color-gray">
+              Learn from home easily and free Learn from home easily and free
+              Learn from home easily and free Learn from home easily and free
+              Learn from home easily and free Learn from home easily and free
+              Learn from home easily and free Learn from home easily.
+            </h6>
+            <div
+              class="col-md-12 text-center"
+              style="margin-top: 90px; margin-bottom: 90px"
+            >
+              <img src="Assets/Group.png" width="200" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+    
+    <script type="text/javascript">
+     
+      var authorizeButton = document.getElementById("authorize_button");
+      var signoutButton = document.getElementById("signout_button");
+      var dashboardButton = document.getElementById("dashborad");
+
+      //handle on clicks of each page:
+
+      function ready(){
+        authorizeButton.onclick = handleAuthClick;
+              signoutButton.onclick = handleSignoutClick;
+              dashboardButton.onclick = goToDashboard;
+      }
+
+      /**
+       *  Called when the signed in status changes, to update the UI
+       *  appropriately. After a sign-in, the API is called.
+       */
+      function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+          authorizeButton.style.display = "none";
+          signoutButton.style.display = "block";
+          dashboardButton.style.display = "block";
+        } else {
+          authorizeButton.style.display = "block";
+          signoutButton.style.display = "none";
+          dashboardButton.style.display = "none";
+        }
+      }
+      
+      //Go to dashboard:
+      function goToDashboard() {
+        window.location="dashboard.html";
+      }
+
+    </script>
+
+    <script
+      async
+      defer
+      src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()"
+    ></script>
+  </body>
+</html>
