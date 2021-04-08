@@ -14,7 +14,7 @@ var DISCOVERY_DOCS = [
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
 var SCOPES =
-  "https://www.googleapis.com/auth/classroom.courses https://www.googleapis.com/auth/youtube.readonly ";
+  "https://www.googleapis.com/auth/classroom.courses https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.force-ssl";
 
 /**
  *  Sign in the user upon button click.
@@ -96,7 +96,7 @@ function initClient() {
         ready();
       },
       function (error) {
-        appendPre(JSON.stringify(error, null, 2));
+        console.error("error",error);
       }
     );
 }

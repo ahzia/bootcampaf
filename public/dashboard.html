@@ -8,6 +8,8 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="auth.js"></script>
     <script type="text/javascript" src="people.js"></script>
+    <script type="text/javascript" src="Course.js"></script>
+    <script type="text/javascript" src="channel.js"></script>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="dashboard.css" />
   </head>
@@ -204,6 +206,10 @@
         </div>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
     <script>
       //this variable will store the channel id of loged in user
       var channelID;
@@ -230,127 +236,6 @@
           //Show message and go back to login page
           window.location = "index.html";
         }
-      }
-
-      /**
-       * Append a pre element to the body containing the given message
-       * as its text node. Used to display the results of the API call.
-       *
-       * @param {string} message Text to be placed in pre element.
-       */
-      function appendPre(message) {
-        var pre = document.getElementById("content");
-        var textContent = document.createTextNode(message + "\n");
-        pre.appendChild(textContent);
-      }
-
-      /**
-       * Print the names of the first 10 courses the user has access to. If
-       * no courses are found an appropriate message is printed.
-       */
-
-      //Function to create a cource in google classroom
-      function CreateCourse() {
-        var txtName = document.getElementById("txtName").value;
-        var txtDescription = document.getElementById("txtDescription").value;
-        var txtDescriptionHeading = document.getElementById(
-          "txtDescriptionHeading"
-        ).value;
-
-        return gapi.client.classroom.courses
-          .create({
-            resource: {
-              name: txtName,
-              descriptionHeading: txtDescription,
-              description: txtDescriptionHeading,
-              ownerId: "me",
-            },
-          })
-          .then(
-            function (response) {
-              // Handle the results here (response.result has the parsed body).
-              console.log("Response", response);
-              getMyCourse();
-            },
-            function (err) {
-              console.error("Execute error", err);
-            }
-          );
-      }
-    </script>
-    <script>
-      //load courses
-
-      //list Courses a student is enrolled in
-
-      function getEnrolled() {
-        return gapi.client.classroom.courses
-          .list({
-            studentId: "me",
-          })
-          .then(
-            function (response) {
-              // Handle the results here (response.result has the parsed body).
-              var res = JSON.parse(response.body).courses;
-              console.log(
-                "Response",
-                JSON.stringify(JSON.parse(response.body).courses)
-              );
-                  //jQuery code to show Json data in HTML:
-
-                  $(".course").hide();
-              res.forEach(function (item) {
-                var cards = $(".course:first").clone(); //clone first divs
-                var className = item.name;
-                var heading = item.descriptionHeading;
-                var description = item.description;
-                //add values inside divs
-                $(cards).find(".class-name").html(className);
-                $(cards).find(".class-header").html(heading);
-                $(cards).find(".class-description").html(description);
-                $(cards).show(); //show cards
-                $(cards).appendTo($(".enrolledContainer")); //append to container
-              });
-            },
-            function (err) {
-              console.error("Execute error", err);
-            }
-          );
-      }
-      //retrive list of courses that user is as a teacher:
-      function getMyCourse() {
-        return gapi.client.classroom.courses
-          .list({
-            "teacherId": "me",
-          })
-          .then(
-            function (response) {
-              // Handle the results here (response.result has the parsed body).
-              var res = JSON.parse(response.body).courses;
-              console.log(
-                "Response",
-                JSON.stringify(JSON.parse(response.body).courses)
-              );
-                  //jQuery code to show Json data in HTML:
-
-                  $(".myCourse").hide();
-              res.forEach(function (item) {
-                var cards = $(".myCourse:first").clone(); //clone first divs
-                var className = item.name;
-                var heading = item.descriptionHeading;
-                var description = item.description;
-                //add values inside divs
-                $(cards).find(".class-name").html(className);
-                $(cards).find(".class-header").html(heading);
-                $(cards).find(".class-description").html(description);
-                $(cards).show(); //show cards
-                $(cards).appendTo($(".myCourseContainer")); //append to container
-              });
-            },
-            function (err) {
-              console.error("Execute error", err);
-            }
-          );
       }
     </script>
     <script

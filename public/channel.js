@@ -18,3 +18,28 @@ function getChannelsId() {
         }
       );
   }
+var playlistID;
+function createplaylist(pTitle,pDescription){
+  createPL(pTitle,pDescription);
+  console.log("second",playlistID);
+}
+  function createPL(pTitle,pDescription) {
+    return gapi.client.youtube.playlists.insert({
+      "part": [
+        "snippet"
+      ],
+      "resource": {
+        "snippet": {
+          "title": "Temp",
+          "description": "Created By Bootcamp.af - description",
+          "privacyStatus": "public"
+        }
+      }
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+                playlistID=response;
+              },
+              function(err) { console.error("Execute error", err); });
+  }
