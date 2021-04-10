@@ -9,6 +9,7 @@
     <script type="text/javascript" src="auth.js"></script>
   </head>
   <body style="background-color: #ff5678">
+    <div id="data"></div>
     <div class="container">
       <div class="row">
         <div class="col-md-3"></div>
@@ -16,7 +17,7 @@
           <div class="container">
             <div class="col-md-12 right-align" style="margin-top: 10px">
               <h2 style="cursor: pointer">
-                <span aria-hidden="true" >&times;</span>
+                <span aria-hidden="true">&times;</span>
               </h2>
             </div>
             <div class="col-md-12 text-center main-color">
@@ -86,19 +87,18 @@
         <div class="col-md-3"></div>
       </div>
     </div>
-    
+
     <script type="text/javascript">
-     
       var authorizeButton = document.getElementById("authorize_button");
       var signoutButton = document.getElementById("signout_button");
       var dashboardButton = document.getElementById("dashborad");
 
       //handle on clicks of each page:
 
-      function ready(){
+      function ready() {
         authorizeButton.onclick = handleAuthClick;
-              signoutButton.onclick = handleSignoutClick;
-              dashboardButton.onclick = goToDashboard;
+        signoutButton.onclick = handleSignoutClick;
+        dashboardButton.onclick = goToDashboard;
       }
 
       /**
@@ -116,14 +116,13 @@
           dashboardButton.style.display = "none";
         }
       }
-      
+
       //Go to dashboard:
       function goToDashboard() {
-        window.location="dashboard.html";
+        window.location = "dashboard.html";
       }
-
     </script>
-    
+
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>

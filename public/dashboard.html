@@ -84,11 +84,9 @@
       <div class="col-md-12">
         <button
           type="button"
-          class="btn btn-sm btn-light border-color-gray"
-          style="margin-top: 10px"
+          class="btn btn-sm btn-light border-color-gray mt-2"
           name="button"
-          data-toggle="modal"
-          data-target="#exampleModal"
+          id="join_course_button"
         >
           Join new Course
         </button>
@@ -213,9 +211,15 @@
     <script>
       //this variable will store the channel id of loged in user
       var channelID;
-
+      var joinCourseButton = document.getElementById("join_course_button");
       var createCourseButton = document.getElementById("create_course_button");
       var signoutButton = document.getElementById("signout");
+
+      //Go to JoinCourse:
+      function goToJoinCourse() {
+        window.location="join.html";
+      }
+
 
       //handle on clicks of each page:
 
@@ -225,6 +229,7 @@
         //dashboardButton.onclick = goToDashboard;
         createCourseButton.onclick = CreateCourse;
         signoutButton.onclick = handleSignoutClick;
+        joinCourseButton.onclick = goToJoinCourse;
         getEnrolled(); //show all courses that user is enrolled in
         getMyCourse(); //show all courses that user is as a teacher
       }
