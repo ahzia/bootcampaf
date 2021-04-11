@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bootcamp</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap/Jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="auth.js"></script>
+    <script type="text/javascript" src="people.js"></script>
+    <script type="text/javascript" src="Course.js"></script>
+    <script type="text/javascript" src="channel.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="container-fluid" style="box-shadow: 0 2px 3px -2px gray">
+      <div class="row">
+        <div class="container">
+          <nav
+            class="navbar navbar-expand-sm navbar-light no-padding-top-bottom"
+          >
+            <a class="navbar-brand" href="#" style="color: #ff5678"
+              ><b>BootCamp</b></a
+            >
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"
+                    >Dashborad <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="" class="nav-link" id="signout">Logout</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link"
+                    ><img
+                      id="userImage"
+                      src="Assets/username.png"
+                      width="40"
+                      height="40"
+                      alt="user profile"
+                    />
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="userName"></a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row enrolledContainer">
+        <div class="col-md-12">
+          <div class="course-div-title">
+            <span class="course-div-title-text">Enrolled Course</span>
+          </div>
+        </div>
+        <div class="col-md-3 course-div-content course" >
+          <!-- put item.userId & item.id below this -->
+          <h6 class="class-name"></h6>
+          <p style="color: #ff5678" class="class-header"></p>
+          <p style="color: lightgray" class="class-description"></p>
+          <div class="row"></div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <button
+          type="button"
+          class="btn btn-sm btn-light border-color-gray mt-2"
+          name="button"
+          id="join_course_button"
+        >
+          Join new Course
+        </button>
+
+        <!-- join course modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Join New Course
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true" style="color: white">&times;</span>
+                </button>
+              </div>
+              <form>
+                <div class="modal-body">
+                  <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-sm"
+                        >Course Name</span
+                      >
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      aria-label="Sizing example input"
+                      aria-describedby="inputGroup-sizing-sm"
+                      id="txtName"
+                    />
+                  </div>
+                  <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-sm"
+                        >Course Heading</span
+                      >
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      aria-label="Sizing example input"
+                      aria-describedby="inputGroup-sizing-sm"
+                      id="txtDescriptionHeading"
+                    />
+                  </div>
+                  <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-sm"
+                        >Course description</span
+                      >
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      aria-label="Sizing example input"
+                      aria-describedby="inputGroup-sizing-sm"
+                      id="txtDescription"
+                    />
+                  </div>
+                  <center>
+                    <button
+                      type="button"
+                      class="btn btn-md"
+                      style="background-color: #ff5678; color: white"
+                      id="create_course_button"
+                    >
+                      Create Course
+                    </button>
+                  </center>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- /join course modal -->
+      </div>
+      <div class="row myCourseContainer">
+        <div class="col-md-12">
+          <div class="course-div-title">
+            <span class="course-div-title-text">Created Courses</span>
+          </div>
+        </div>
+          <form class="col-md-3 course-div-content myCourse">
+            <!-- put item.userId & item.id below this -->
+            <h6 class="class-name"></h6>
+            <p style="color: #ff5678" class="class-header"></p>
+            <p style="color: lightgray" class="class-description"></p>
+            <input class="class-link d-none" type="text" name="courselink" id="courselink">
+          <input type="button" onclick="goToCourse(courselink.value)" value="Go to Course"/>
+            <div class="row"></div>
+          </form>
+        </div>
+        <div class="col-md-12" style="margin-bottom: 50px; margin-top: 10px">
+          <button
+            type="button"
+            class="btn btn-sm btn-light"
+            name="button"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            style="border-color: gray"
+          >
+            Create new Course
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+    <script>
+      //this variable will store the channel id of loged in user
+      var channelID;
+      var joinCourseButton = document.getElementById("join_course_button");
+      var createCourseButton = document.getElementById("create_course_button");
+      var signoutButton = document.getElementById("signout");
+
+      //Go to JoinCourse:
+      function goToJoinCourse() {
+        window.location="join.html";
+      }
+      function goToCourse(classlink){;
+        console.log("url:",classlink)
+        var win = window.open(classlink, '_blank');
+        win.focus();
+      }
+
+
+      //handle on clicks of each page:
+
+      function ready() {
+        //authorizeButton.onclick = handleAuthClick;
+        //signoutButton.onclick = handleSignoutClick;
+        //dashboardButton.onclick = goToDashboard;
+        createCourseButton.onclick = CreateCourse;
+        signoutButton.onclick = handleSignoutClick;
+        joinCourseButton.onclick = goToJoinCourse;
+        getEnrolled(); //show all courses that user is enrolled in
+        getMyCourse(); //show all courses that user is as a teacher
+      }
+
+      function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+          getSignInInfo();
+        } else {
+          //Show message and go back to login page
+          window.location = "index.html";
+        }
+      }
+    </script>
+    <script
+      async
+      defer
+      src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()"
+    ></script>
+  </body>
+</html>
