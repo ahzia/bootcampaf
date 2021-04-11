@@ -73,7 +73,7 @@
             <span class="course-div-title-text">Enrolled Course</span>
           </div>
         </div>
-        <div class="col-md-3 course-div-content course">
+        <div class="col-md-3 course-div-content course" >
           <!-- put item.userId & item.id below this -->
           <h6 class="class-name"></h6>
           <p style="color: #ff5678" class="class-header"></p>
@@ -182,13 +182,15 @@
             <span class="course-div-title-text">Created Courses</span>
           </div>
         </div>
-          <div class="col-md-3 course-div-content myCourse">
+          <form class="col-md-3 course-div-content myCourse">
             <!-- put item.userId & item.id below this -->
             <h6 class="class-name"></h6>
             <p style="color: #ff5678" class="class-header"></p>
             <p style="color: lightgray" class="class-description"></p>
+            <input class="class-link d-none" type="text" name="courselink" id="courselink">
+          <input type="button" onclick="goToCourse(courselink.value)" value="Go to Course"/>
             <div class="row"></div>
-          </div>
+          </form>
         </div>
         <div class="col-md-12" style="margin-bottom: 50px; margin-top: 10px">
           <button
@@ -218,6 +220,11 @@
       //Go to JoinCourse:
       function goToJoinCourse() {
         window.location="join.html";
+      }
+      function goToCourse(classlink){;
+        console.log("url:",classlink)
+        var win = window.open(classlink, '_blank');
+        win.focus();
       }
 
 

@@ -107,10 +107,12 @@ function getMyCourse() {
             var className = item.name;
             var heading = item.descriptionHeading;
             var description = item.description;
+            var courselink = item.alternateLink;
             //add values inside divs
             $(cards).find(".class-name").html(className);
             $(cards).find(".class-header").html(heading);
             $(cards).find(".class-description").html(description);
+            $(cards).find(".class-link").val(courselink);
             $(cards).show(); //show cards
             $(cards).appendTo($(".myCourseContainer")); //append to container
           }
